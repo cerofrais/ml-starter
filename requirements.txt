@@ -1,0 +1,36 @@
+## i use azure for storage so .. 
+# azure-storage-blob==12.7.1
+
+# to deploy the code as service 
+fastapi==0.60.1
+# for multiple request handling
+gunicorn==20.1.0
+
+
+# for doing api calls to third party apis
+requests==2.24.0
+
+# data 
+pandas==1.1.1
+numpy==1.19.5
+
+#mongodb
+pymongo==3.11.1
+
+# classic ml 
+scikit-learn==0.24.1
+
+#
+
+#nlp
+spacy==2.3.5
+
+# versioning ml experiments and models 
+mlflow==1.17.0
+
+# for deep learning depending on framework, tensorflow or pytorch
+
+# load testing
+locust==1.4.3
+
+
