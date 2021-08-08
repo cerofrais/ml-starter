@@ -1,5 +1,6 @@
 # ml-starter
 Making this repo as a template for beginners in machine learning. Python3 based setup. Please free to update and raise a PR.
+If you are interested in using specific things of issues, please create an issue so if i know i can answer or someone else can pick it up.
 
 Notes : 
     1. Make sure you have only one python in the system or understand how many of them are there and use the right one accoring to project.
