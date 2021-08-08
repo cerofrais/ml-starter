@@ -56,12 +56,60 @@ list is in requirements.txt
     ```
     pip install package_name==version
     ```
-    To install a python package from inside jupyter notebook
+    To uninstall a python package 
     ```
-    !pip install package_name==version
+    pip uninstall package_name
+    ```
+    To install all the packages in requirements.txt . Note that the packges are installed in the order of size which ever one finished download first, sometimes it may cause dependency issues.
+    ```
+    pip install -r requirements.txt
     ```
 * to know all the installed packages in the projects virtual environment. outputs with installed versions, you can output this to requirements.txt  `pip freeze >> requirements.txt`
     ```
     pip freeze
     ```
+    
+#### Python virtual environment
+ As docker freezes the OS level dependencies to run a project, we use python virtual environments to freeze python level dependencies. For example if Project-A needs `opencv==1.2` and if Project-B needs `opencv==2.4` we can have two different virtual environments for both, so they both dont cooflict.
+To create a Virtual environment, you need `virtualenv` package first, to install virtualenv :
+```
+pip install virtualenv
+```
+now to Create a new virtual environment from a specific python version: **Note the virtual env will create a folder where ever you run this following command**
+```
+virtualenv name_of_virtual_env -p path/to/python
+```
+to activate virtual environment :
+```
+source path_to_name_of_virtual_env/bin/activate
+```
+to deactivate virtual environment :
+```
+source deactivate
+```
+* I edit my bashrc file and add an alias which automaticall activates the virtual environment and moves me to the required project folder. Line that goes in your bashrc file, 
+* **Note you have to restart terminal or do `source ~/.bashrc` so that this edited alias starts working.** 
+* I use absolute paths so i can run this from anywhere.
+* All the python packages you install when inside the venv with only be available to be used inside the venv
+```
+alias ccs='source absolute/path/to/venv/bin/activate && cd path/to/project/project-name && pwd && which python'
+```
+#### Jupyter notebook
+* Use Jupyter notebook only when you are experimenting or learning. As this is very good for learning and presentation at the same time this will teach bad habits which will cause issues when you start writing code for production.
+* jupyter notebook creates a server by deafult so you can connect from any other systems to edit, see output and run the code in server which is running the notebook
+* installing Jupyter notebook :
+```   
+pip install notebook
+```
+* to run the jupyter notebook :
+```
+jupyter notebook
+```
+* copy paste the url that server gives in browser, ready to go.
+
+To install a python package from inside jupyter notebook from a cell and run it `shift+enter`
+```
+!pip install package_name==version
+```
+
 
